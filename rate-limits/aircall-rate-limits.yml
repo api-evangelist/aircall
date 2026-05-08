@@ -16,9 +16,11 @@ tags:
 - Quotas
 - Throttling
 description: Placeholder rate-limit artifact for Aircall. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+notes: "Initial scaffold \u2014 limits have not yet been reconciled."
 sources:
 - https://aircall.io/
+- https://developer.aircall.io/
+- https://developer.aircall.io/api-references/
 responseCodes:
   throttled: 429
 limits:

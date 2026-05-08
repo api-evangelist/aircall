@@ -1,0 +1,29 @@
+aid: aircall
+url: https://raw.githubusercontent.com/api-evangelist/aircall/refs/heads/main/apis.yml
+name: Aircall
+x-type: company
+description: >-
+  Aircall is a cloud-based phone system for sales and support teams with deep CRM integrations. APIs for users, calls, numbers, contacts, tags, webhooks, and Aircall AI.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Communications
+  - Voice
+  - Cloud Phone
+  - CRM
+  - Sales
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://aircall.io/
+  - type: Plans
+    url: plans/aircall-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/aircall-rate-limits.yml
+  - type: FinOps
+    url: finops/aircall-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,7 +1,7 @@
 aid: aircall
 url: https://raw.githubusercontent.com/api-evangelist/aircall/refs/heads/main/apis.yml
 name: Aircall
-x-type: company
+kind: company
 description: Aircall is a cloud-based phone system for sales and support teams with deep CRM integrations. APIs for users,
   calls, numbers, contacts, tags, webhooks, and Aircall AI.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg

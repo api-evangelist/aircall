@@ -6,103 +6,107 @@ description: Aircall is a cloud-based phone system for sales and support teams w
   calls, numbers, contacts, tags, webhooks, and Aircall AI.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- Communications
-- Voice
-- Cloud Phone
-- CRM
-- Sales
+  - Communications
+  - Voice
+  - Cloud Phone
+  - CRM
+  - Sales
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
 apis:
-- name: Aircall Calls API
-  description: List, transfer, comment, tag and archive calls.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - Calls
-  - Voice
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Users & Teams API
-  description: Create, retrieve, update and delete users and organize them into teams.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - Users
-  - Teams
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Numbers API
-  description: Configure phone numbers and SMS settings.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - Numbers
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Contacts API
-  description: Manage customer contacts shared across the workspace.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - Contacts
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Webhooks API
-  description: Register, list and manage event subscriptions.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - Webhooks
-  - Events
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Messaging API
-  description: Send and receive SMS/MMS and group messages.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - SMS
-  - Messaging
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Conversation Intelligence API
-  description: Access transcriptions, sentiment analysis, summaries and action items.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - AI
-  - Transcription
-  - Conversation Intelligence
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
-- name: Aircall Dialer Campaign API
-  description: Create and manage outbound dialer campaigns.
-  humanURL: https://developer.aircall.io/api-references/
-  baseURL: https://api.aircall.io/v1
-  tags:
-  - Dialer
-  - Outbound
-  properties:
-  - type: Documentation
-    url: https://developer.aircall.io/api-references/
+  - name: Aircall Calls API
+    description: List, transfer, comment, tag and archive calls.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - Calls
+    - Voice
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Users & Teams API
+    description: Create, retrieve, update and delete users and organize them into teams.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - Users
+    - Teams
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Numbers API
+    description: Configure phone numbers and SMS settings.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - Numbers
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Contacts API
+    description: Manage customer contacts shared across the workspace.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - Contacts
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Webhooks API
+    description: Register, list and manage event subscriptions.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - Webhooks
+    - Events
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Messaging API
+    description: Send and receive SMS/MMS and group messages.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - SMS
+    - Messaging
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Conversation Intelligence API
+    description: Access transcriptions, sentiment analysis, summaries and action items.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - AI
+    - Transcription
+    - Conversation Intelligence
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
+  - name: Aircall Dialer Campaign API
+    description: Create and manage outbound dialer campaigns.
+    humanURL: https://developer.aircall.io/api-references/
+    baseURL: https://api.aircall.io/v1
+    tags:
+    - Dialer
+    - Outbound
+    properties:
+    - type: Documentation
+      url: https://developer.aircall.io/api-references/
 common:
-- type: Website
-  url: https://aircall.io/
-- type: Plans
-  url: plans/aircall-plans-pricing.yml
-- type: RateLimits
-  url: rate-limits/aircall-rate-limits.yml
-- type: FinOps
-  url: finops/aircall-finops.yml
+  - type: GitHubOrganization
+    url: https://github.com/aircall
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/aircall
+  - type: Website
+    url: https://aircall.io/
+  - type: Plans
+    url: plans/aircall-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/aircall-rate-limits.yml
+  - type: FinOps
+    url: finops/aircall-finops.yml
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

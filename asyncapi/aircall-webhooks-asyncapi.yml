@@ -1,0 +1,1243 @@
+asyncapi: 2.6.0
+info:
+  title: Aircall Webhooks
+  version: '1.0.0'
+  description: |-
+    AsyncAPI description of Aircall's outbound webhook surface. Aircall delivers
+    event notifications by issuing HTTP POST requests with a JSON body to a
+    subscriber `url` that is registered through the Webhooks REST API or the
+    Aircall dashboard. Each event carries a top-level `event` field that
+    identifies the event class along with a `resource` discriminator and a
+    `data` payload that mirrors the corresponding REST object.
+
+    Modelled from the Aircall developer reference at
+    https://developer.aircall.io/api-references/#webhooks. Events covered
+    include the call lifecycle (created, ringing, answered, transferred,
+    hungup, ended, voicemail, hold, archive, IVR), call collaboration
+    (commented, tagged, untagged, assigned), contact lifecycle (created,
+    updated, deleted), user lifecycle and presence (created, deleted,
+    connected, disconnected, opened, closed, wrap-up start/end) including
+    the V2 variants, number lifecycle (created, deleted, opened, closed),
+    team lifecycle (created, destroyed), SMS / MMS / WhatsApp messaging
+    (sent, received, status_updated, plus the group_message variants),
+    conversation intelligence (transcription, summary, sentiment, topics,
+    action items, playbook results, real-time utterances, custom summaries,
+    call evaluations), AI Voice Agent (started, ended, escalated, summary),
+    Analytics export jobs (report_created, report_failed) and integration
+    deletions.
+
+    Security and signing:
+      Aircall does not publish an HMAC signature header for outbound
+      webhooks. The documented verification mechanism is a shared `token`
+      field, which is included on every event payload and is set when the
+      webhook subscription is created. Subscribers should compare the
+      received `token` against the value stored at registration time and
+      respond with a 2xx status code. The `token` field is also surfaced
+      below in `components.securitySchemes` for clarity.
+  contact:
+    name: Aircall Developer
+    url: https://developer.aircall.io/api-references/
+  license:
+    name: Aircall Terms of Service
+    url: https://aircall.io/terms/
+
+defaultContentType: application/json
+
+servers:
+  subscriber:
+    url: '{webhookUrl}'
+    protocol: https
+    description: |-
+      Customer-hosted HTTPS endpoint that receives webhook POSTs from Aircall.
+      The full URL is configured per webhook subscription through the
+      Webhooks REST API (`POST /v1/webhooks`) or the Aircall dashboard.
+    variables:
+      webhookUrl:
+        default: https://example.com/aircall/webhook
+        description: Fully-qualified HTTPS URL of the subscriber endpoint.
+    security:
+      - sharedToken: []
+
+channels:
+  /aircall/webhook:
+    description: |-
+      Single subscriber endpoint that receives every Aircall webhook event the
+      subscription is registered for. The top-level `event` field on the JSON
+      body identifies the event class. Aircall sends one event per HTTP POST.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    publish:
+      operationId: receiveAircallWebhook
+      summary: Receive an Aircall webhook event
+      description: |-
+        Aircall POSTs a JSON event to the subscriber endpoint. Subscribers
+        should respond with a 2xx status code and verify the shared `token`
+        on every payload.
+      message:
+        oneOf:
+          # Call lifecycle
+          - $ref: '#/components/messages/CallCreated'
+          - $ref: '#/components/messages/CallRingingOnAgent'
+          - $ref: '#/components/messages/CallAgentDeclined'
+          - $ref: '#/components/messages/CallAnswered'
+          - $ref: '#/components/messages/CallTransferred'
+          - $ref: '#/components/messages/CallExternalTransferred'
+          - $ref: '#/components/messages/CallUnsuccessfulTransfer'
+          - $ref: '#/components/messages/CallHungup'
+          - $ref: '#/components/messages/CallEnded'
+          - $ref: '#/components/messages/CallVoicemailLeft'
+          - $ref: '#/components/messages/CallCommented'
+          - $ref: '#/components/messages/CallTagged'
+          - $ref: '#/components/messages/CallUntagged'
+          - $ref: '#/components/messages/CallAssigned'
+          - $ref: '#/components/messages/CallArchived'
+          - $ref: '#/components/messages/CallHold'
+          - $ref: '#/components/messages/CallUnhold'
+          - $ref: '#/components/messages/CallIvrOptionSelected'
+          - $ref: '#/components/messages/CallCommAssetsGenerated'
+          # Contact lifecycle
+          - $ref: '#/components/messages/ContactCreated'
+          - $ref: '#/components/messages/ContactUpdated'
+          - $ref: '#/components/messages/ContactDeleted'
+          # Number lifecycle
+          - $ref: '#/components/messages/NumberCreated'
+          - $ref: '#/components/messages/NumberDeleted'
+          - $ref: '#/components/messages/NumberOpened'
+          - $ref: '#/components/messages/NumberClosed'
+          # User lifecycle and presence (V1)
+          - $ref: '#/components/messages/UserCreated'
+          - $ref: '#/components/messages/UserDeleted'
+          - $ref: '#/components/messages/UserConnected'
+          - $ref: '#/components/messages/UserDisconnected'
+          - $ref: '#/components/messages/UserOpened'
+          - $ref: '#/components/messages/UserClosed'
+          - $ref: '#/components/messages/UserWutStart'
+          - $ref: '#/components/messages/UserWutEnd'
+          # User lifecycle and presence (V2)
+          - $ref: '#/components/messages/UserCreatedV2'
+          - $ref: '#/components/messages/UserDeletedV2'
+          - $ref: '#/components/messages/UserConnectedV2'
+          - $ref: '#/components/messages/UserDisconnectedV2'
+          - $ref: '#/components/messages/UserOpenedV2'
+          - $ref: '#/components/messages/UserClosedV2'
+          - $ref: '#/components/messages/UserWutStartV2'
+          - $ref: '#/components/messages/UserWutEndV2'
+          # Team lifecycle
+          - $ref: '#/components/messages/TeamCreated'
+          - $ref: '#/components/messages/TeamDestroyed'
+          # Messaging
+          - $ref: '#/components/messages/MessageSent'
+          - $ref: '#/components/messages/MessageReceived'
+          - $ref: '#/components/messages/MessageStatusUpdated'
+          - $ref: '#/components/messages/GroupMessageSent'
+          - $ref: '#/components/messages/GroupMessageReceived'
+          - $ref: '#/components/messages/GroupMessageStatusUpdated'
+          # Integration
+          - $ref: '#/components/messages/IntegrationDeleted'
+          # Conversation Intelligence
+          - $ref: '#/components/messages/SentimentCreated'
+          - $ref: '#/components/messages/SummaryCreated'
+          - $ref: '#/components/messages/TopicsCreated'
+          - $ref: '#/components/messages/TranscriptionCreated'
+          - $ref: '#/components/messages/ActionItemCreated'
+          - $ref: '#/components/messages/PlaybookResultCreated'
+          - $ref: '#/components/messages/PlaybookResultUpdated'
+          - $ref: '#/components/messages/RealtimeTranscriptionUtterancesReceived'
+          - $ref: '#/components/messages/CustomSummaryResultCreated'
+          - $ref: '#/components/messages/CustomSummaryResultUpdated'
+          - $ref: '#/components/messages/CallEvaluationCreated'
+          - $ref: '#/components/messages/CallEvaluationUpdated'
+          # AI Voice Agent
+          - $ref: '#/components/messages/AiVoiceAgentStarted'
+          - $ref: '#/components/messages/AiVoiceAgentEnded'
+          - $ref: '#/components/messages/AiVoiceAgentEscalated'
+          - $ref: '#/components/messages/AiVoiceAgentSummary'
+          # Analytics
+          - $ref: '#/components/messages/AnalyticsReportCreated'
+          - $ref: '#/components/messages/AnalyticsReportFailed'
+
+components:
+  securitySchemes:
+    sharedToken:
+      type: httpApiKey
+      in: query
+      name: token
+      description: |-
+        Shared verification token. Aircall does not sign webhook deliveries
+        with HMAC; instead every JSON payload carries a `token` field set
+        when the subscription is created. Subscribers must compare it to
+        the stored value before trusting the event. Modelled as an API key
+        here because the value is transmitted on the request body rather
+        than in an HTTP header.
+
+  messages:
+    # ---------------- Call lifecycle ----------------
+    CallCreated:
+      name: call.created
+      title: Call created
+      summary: A new call has been initiated (inbound or outbound).
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallRingingOnAgent:
+      name: call.ringing_on_agent
+      title: Call ringing on agent
+      summary: The call is ringing on an agent's phone.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallAgentDeclined:
+      name: call.agent_declined
+      title: Agent declined call
+      summary: An agent declined the incoming call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallAnswered:
+      name: call.answered
+      title: Call answered
+      summary: The call has been answered.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallTransferred:
+      name: call.transferred
+      title: Call transferred
+      summary: The call was transferred between Aircall users.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallExternalTransferred:
+      name: call.external_transferred
+      title: Call externally transferred
+      summary: The call was transferred to an external phone number.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallUnsuccessfulTransfer:
+      name: call.unsuccessful_transfer
+      title: Unsuccessful transfer
+      summary: A transfer attempt did not complete successfully.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallHungup:
+      name: call.hungup
+      title: Call hung up
+      summary: One party hung up the call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallEnded:
+      name: call.ended
+      title: Call ended
+      summary: The call session has fully ended.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallVoicemailLeft:
+      name: call.voicemail_left
+      title: Voicemail left
+      summary: A voicemail was recorded for the call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallCommented:
+      name: call.commented
+      title: Call commented
+      summary: A note/comment was added to the call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallTagged:
+      name: call.tagged
+      title: Call tagged
+      summary: A tag was applied to the call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallUntagged:
+      name: call.untagged
+      title: Call untagged
+      summary: A tag was removed from the call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallAssigned:
+      name: call.assigned
+      title: Call assigned
+      summary: The call was assigned to a user.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallArchived:
+      name: call.archived
+      title: Call archived
+      summary: The call was archived / marked as resolved.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallHold:
+      name: call.hold
+      title: Call placed on hold
+      summary: The call was placed on hold.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallUnhold:
+      name: call.unhold
+      title: Call resumed from hold
+      summary: The call was resumed from hold.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallIvrOptionSelected:
+      name: call.ivr_option_selected
+      title: IVR option selected
+      summary: The caller selected an option in an IVR menu.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+    CallCommAssetsGenerated:
+      name: call.comm_assets_generated
+      title: Communication assets generated
+      summary: Recording / voicemail asset links are available for the call.
+      payload:
+        $ref: '#/components/schemas/CallEvent'
+
+    # ---------------- Contact lifecycle ----------------
+    ContactCreated:
+      name: contact.created
+      title: Contact created
+      summary: A new contact was added to the shared address book.
+      payload:
+        $ref: '#/components/schemas/ContactEvent'
+    ContactUpdated:
+      name: contact.updated
+      title: Contact updated
+      summary: A contact's information was modified.
+      payload:
+        $ref: '#/components/schemas/ContactEvent'
+    ContactDeleted:
+      name: contact.deleted
+      title: Contact deleted
+      summary: A contact was removed from the shared address book.
+      payload:
+        $ref: '#/components/schemas/ContactEvent'
+
+    # ---------------- Number lifecycle ----------------
+    NumberCreated:
+      name: number.created
+      title: Number created
+      summary: A new phone number was added to the workspace.
+      payload:
+        $ref: '#/components/schemas/NumberEvent'
+    NumberDeleted:
+      name: number.deleted
+      title: Number deleted
+      summary: A phone number was removed from the workspace.
+      payload:
+        $ref: '#/components/schemas/NumberEvent'
+    NumberOpened:
+      name: number.opened
+      title: Number opened
+      summary: The number's status switched to open. Deprecated for Smartflows-enabled lines.
+      payload:
+        $ref: '#/components/schemas/NumberEvent'
+    NumberClosed:
+      name: number.closed
+      title: Number closed
+      summary: The number's status switched to closed. Deprecated for Smartflows-enabled lines.
+      payload:
+        $ref: '#/components/schemas/NumberEvent'
+
+    # ---------------- User lifecycle / presence V1 ----------------
+    UserCreated:
+      name: user.created
+      title: User created
+      summary: A new Aircall user was provisioned.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserDeleted:
+      name: user.deleted
+      title: User deleted
+      summary: An Aircall user was deprovisioned.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserConnected:
+      name: user.connected
+      title: User connected
+      summary: The user came online.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserDisconnected:
+      name: user.disconnected
+      title: User disconnected
+      summary: The user went offline.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserOpened:
+      name: user.opened
+      title: User opened phone
+      summary: The user opened the Aircall phone app.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserClosed:
+      name: user.closed
+      title: User closed phone
+      summary: The user closed the Aircall phone app.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserWutStart:
+      name: user.wut_start
+      title: User wrap-up time started
+      summary: Wrap-up time began for the user.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+    UserWutEnd:
+      name: user.wut_end
+      title: User wrap-up time ended
+      summary: Wrap-up time ended for the user.
+      payload:
+        $ref: '#/components/schemas/UserEvent'
+
+    # ---------------- User lifecycle / presence V2 ----------------
+    UserCreatedV2:
+      name: user.created.v2
+      title: User created (v2)
+      summary: V2 variant of user.created. Excludes the `numbers` array present in V1.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserDeletedV2:
+      name: user.deleted.v2
+      title: User deleted (v2)
+      summary: V2 variant of user.deleted.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserConnectedV2:
+      name: user.connected.v2
+      title: User connected (v2)
+      summary: V2 variant of user.connected.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserDisconnectedV2:
+      name: user.disconnected.v2
+      title: User disconnected (v2)
+      summary: V2 variant of user.disconnected.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserOpenedV2:
+      name: user.opened.v2
+      title: User opened phone (v2)
+      summary: V2 variant of user.opened.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserClosedV2:
+      name: user.closed.v2
+      title: User closed phone (v2)
+      summary: V2 variant of user.closed.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserWutStartV2:
+      name: user.wut_start.v2
+      title: User wrap-up time started (v2)
+      summary: V2 variant of user.wut_start. Includes `last_call_id` when available.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+    UserWutEndV2:
+      name: user.wut_end.v2
+      title: User wrap-up time ended (v2)
+      summary: V2 variant of user.wut_end. Includes `last_call_id` when available.
+      payload:
+        $ref: '#/components/schemas/UserEventV2'
+
+    # ---------------- Team lifecycle ----------------
+    TeamCreated:
+      name: team.created
+      title: Team created
+      summary: A new team was created.
+      payload:
+        $ref: '#/components/schemas/TeamEvent'
+    TeamDestroyed:
+      name: team.destroyed
+      title: Team destroyed
+      summary: A team was deleted.
+      payload:
+        $ref: '#/components/schemas/TeamEvent'
+
+    # ---------------- Messaging ----------------
+    MessageSent:
+      name: message.sent
+      title: Message sent
+      summary: A message was sent from an Aircall number (SMS, MMS or WhatsApp).
+      payload:
+        $ref: '#/components/schemas/MessageEvent'
+    MessageReceived:
+      name: message.received
+      title: Message received
+      summary: A message was received on an Aircall number.
+      payload:
+        $ref: '#/components/schemas/MessageEvent'
+    MessageStatusUpdated:
+      name: message.status_updated
+      title: Message status updated
+      summary: A message's delivery status changed.
+      payload:
+        $ref: '#/components/schemas/MessageEvent'
+    GroupMessageSent:
+      name: group_message.sent
+      title: Group message sent
+      summary: A group message was sent from an Aircall number.
+      payload:
+        $ref: '#/components/schemas/MessageEvent'
+    GroupMessageReceived:
+      name: group_message.received
+      title: Group message received
+      summary: A group message was received on an Aircall number.
+      payload:
+        $ref: '#/components/schemas/MessageEvent'
+    GroupMessageStatusUpdated:
+      name: group_message.status_updated
+      title: Group message status updated
+      summary: A group message's delivery status changed.
+      payload:
+        $ref: '#/components/schemas/MessageEvent'
+
+    # ---------------- Integration ----------------
+    IntegrationDeleted:
+      name: integration.deleted
+      title: Integration deleted
+      summary: A third-party integration was disconnected from the workspace.
+      payload:
+        $ref: '#/components/schemas/IntegrationEvent'
+
+    # ---------------- Conversation Intelligence ----------------
+    SentimentCreated:
+      name: sentiment.created
+      title: Sentiment created
+      summary: Sentiment analysis was generated for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    SummaryCreated:
+      name: summary.created
+      title: Summary created
+      summary: A summary was generated for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    TopicsCreated:
+      name: topics.created
+      title: Topics created
+      summary: Key topics were identified for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    TranscriptionCreated:
+      name: transcription.created
+      title: Transcription created
+      summary: A transcription was generated for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    ActionItemCreated:
+      name: action_item.created
+      title: Action item created
+      summary: An action item was extracted from a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    PlaybookResultCreated:
+      name: playbook_result.created
+      title: Playbook result created
+      summary: A playbook evaluation result was created for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    PlaybookResultUpdated:
+      name: playbook_result.updated
+      title: Playbook result updated
+      summary: A playbook evaluation result was updated for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    RealtimeTranscriptionUtterancesReceived:
+      name: realtime_transcription.utterances_received
+      title: Real-time transcription utterances received
+      summary: Real-time utterances streamed during an active call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    CustomSummaryResultCreated:
+      name: custom_summary.result_created
+      title: Custom summary result created
+      summary: A custom summary result was created for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    CustomSummaryResultUpdated:
+      name: custom_summary.result_updated
+      title: Custom summary result updated
+      summary: A custom summary result was updated for a call.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    CallEvaluationCreated:
+      name: call_evaluation.created
+      title: Call evaluation created
+      summary: A call evaluation was created.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+    CallEvaluationUpdated:
+      name: call_evaluation.updated
+      title: Call evaluation updated
+      summary: A call evaluation was updated.
+      payload:
+        $ref: '#/components/schemas/ConversationIntelligenceEvent'
+
+    # ---------------- AI Voice Agent ----------------
+    AiVoiceAgentStarted:
+      name: ai_voice_agent.started
+      title: AI Voice Agent call started
+      summary: An AI Voice Agent call was initiated.
+      payload:
+        $ref: '#/components/schemas/AiVoiceAgentEvent'
+    AiVoiceAgentEnded:
+      name: ai_voice_agent.ended
+      title: AI Voice Agent call ended
+      summary: An AI Voice Agent call completed.
+      payload:
+        $ref: '#/components/schemas/AiVoiceAgentEvent'
+    AiVoiceAgentEscalated:
+      name: ai_voice_agent.escalated
+      title: AI Voice Agent escalated
+      summary: An AI Voice Agent call was escalated to a human agent.
+      payload:
+        $ref: '#/components/schemas/AiVoiceAgentEvent'
+    AiVoiceAgentSummary:
+      name: ai_voice_agent.summary
+      title: AI Voice Agent summary
+      summary: Intake-question answers / summary delivered by the AI Voice Agent.
+      payload:
+        $ref: '#/components/schemas/AiVoiceAgentEvent'
+
+    # ---------------- Analytics ----------------
+    AnalyticsReportCreated:
+      name: analytics.report_created
+      title: Analytics report created
+      summary: An analytics export job completed successfully.
+      payload:
+        $ref: '#/components/schemas/AnalyticsEvent'
+    AnalyticsReportFailed:
+      name: analytics.report_failed
+      title: Analytics report failed
+      summary: An analytics export job failed.
+      payload:
+        $ref: '#/components/schemas/AnalyticsEvent'
+
+  schemas:
+    # ---------------- Envelope ----------------
+    EventEnvelope:
+      type: object
+      description: |-
+        Common envelope shared by every Aircall webhook event. The specific
+        event type is identified by the `event` field; the `data` field
+        contains the affected object and mirrors the corresponding REST
+        resource. The `token` field is the shared verification secret set
+        when the subscription was created.
+      required:
+        - event
+        - resource
+        - timestamp
+        - token
+        - data
+      properties:
+        event:
+          type: string
+          description: Event type identifier, e.g. `call.created`.
+        resource:
+          type: string
+          description: The kind of object affected by the event.
+          enum:
+            - call
+            - contact
+            - number
+            - user
+            - team
+            - message
+            - group_message
+            - integration
+            - sentiment
+            - summary
+            - topics
+            - transcription
+            - action_item
+            - playbook_result
+            - realtime_transcription
+            - custom_summary
+            - call_evaluation
+            - ai_voice_agent
+            - analytics
+        timestamp:
+          type: integer
+          format: int64
+          description: UTC epoch timestamp at which the event occurred.
+        token:
+          type: string
+          description: |-
+            Shared verification token configured when the webhook
+            subscription was created. Subscribers must compare this
+            value to the stored secret before acting on the event.
+        data:
+          description: Affected object. The shape mirrors the corresponding REST resource.
+
+    # ---------------- Per-resource envelopes ----------------
+    CallEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: call
+            data:
+              $ref: '#/components/schemas/Call'
+
+    ContactEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: contact
+            data:
+              $ref: '#/components/schemas/Contact'
+
+    NumberEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: number
+            data:
+              $ref: '#/components/schemas/Number'
+
+    UserEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: user
+            data:
+              $ref: '#/components/schemas/User'
+
+    UserEventV2:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: user
+            data:
+              $ref: '#/components/schemas/UserV2'
+
+    TeamEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: team
+            data:
+              $ref: '#/components/schemas/Team'
+
+    MessageEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              description: |-
+                Either `message` for SMS/MMS/WhatsApp single-recipient
+                messages or `group_message` for group conversations.
+              enum: [message, group_message]
+            data:
+              $ref: '#/components/schemas/Message'
+
+    IntegrationEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: integration
+            data:
+              $ref: '#/components/schemas/Integration'
+
+    ConversationIntelligenceEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              description: |-
+                The conversation-intelligence resource kind: `sentiment`,
+                `summary`, `topics`, `transcription`, `action_item`,
+                `playbook_result`, `realtime_transcription`,
+                `custom_summary` or `call_evaluation`.
+            data:
+              $ref: '#/components/schemas/ConversationIntelligenceResult'
+
+    AiVoiceAgentEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: ai_voice_agent
+            data:
+              $ref: '#/components/schemas/AiVoiceAgentResult'
+
+    AnalyticsEvent:
+      allOf:
+        - $ref: '#/components/schemas/EventEnvelope'
+        - type: object
+          properties:
+            resource:
+              type: string
+              const: analytics
+            data:
+              $ref: '#/components/schemas/AnalyticsReport'
+
+    # ---------------- Domain objects ----------------
+    Call:
+      type: object
+      description: |-
+        Aircall Call object as delivered on webhook events. Fields mirror
+        the REST `/v1/calls` resource. Not every field is present on every
+        event; for example `answered_at` only appears once the call has
+        been answered and `asset` / `recording` only appear after
+        `call.comm_assets_generated`.
+      properties:
+        id:
+          type: integer
+        sid:
+          type: string
+        call_uuid:
+          type: string
+        direct_link:
+          type: string
+          format: uri
+        direction:
+          type: string
+          enum: [inbound, outbound]
+        status:
+          type: string
+          enum: [initial, answered, done]
+        missed_call_reason:
+          type: string
+        started_at:
+          type: integer
+          format: int64
+          description: UTC epoch seconds when the call started.
+        answered_at:
+          type: integer
+          format: int64
+          description: UTC epoch seconds when the call was answered, if any.
+        ended_at:
+          type: integer
+          format: int64
+          description: UTC epoch seconds when the call ended, if any.
+        duration:
+          type: integer
+          description: Call duration in seconds.
+        raw_digits:
+          type: string
+        archived:
+          type: boolean
+        voicemail:
+          type: string
+          format: uri
+        recording:
+          type: string
+          format: uri
+        recording_short_url:
+          type: string
+          format: uri
+        voicemail_short_url:
+          type: string
+          format: uri
+        asset:
+          type: string
+          format: uri
+          description: Recording / voicemail asset URL (set on call.comm_assets_generated).
+        cost:
+          type: string
+        number:
+          $ref: '#/components/schemas/Number'
+        user:
+          $ref: '#/components/schemas/User'
+        contact:
+          $ref: '#/components/schemas/Contact'
+        assigned_to:
+          $ref: '#/components/schemas/User'
+        transferred_by:
+          $ref: '#/components/schemas/User'
+        transferred_to:
+          $ref: '#/components/schemas/User'
+        external_transferred_to:
+          type: string
+          description: External phone number the call was transferred to.
+        external_caller_number:
+          type: string
+        teams:
+          type: array
+          items:
+            $ref: '#/components/schemas/Team'
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Comment'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        participants:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        ivr_options_selected:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+
+    Contact:
+      type: object
+      description: Aircall Contact object as delivered on webhook events.
+      properties:
+        id:
+          type: integer
+        direct_link:
+          type: string
+          format: uri
+        first_name:
+          type: string
+        last_name:
+          type: string
+        company_name:
+          type: string
+        information:
+          type: string
+        is_shared:
+          type: boolean
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        phone_numbers:
+          type: array
+          items:
+            $ref: '#/components/schemas/PhoneNumber'
+        emails:
+          type: array
+          items:
+            $ref: '#/components/schemas/Email'
+
+    PhoneNumber:
+      type: object
+      properties:
+        id:
+          type: integer
+        label:
+          type: string
+        value:
+          type: string
+
+    Email:
+      type: object
+      properties:
+        id:
+          type: integer
+        label:
+          type: string
+        value:
+          type: string
+
+    Number:
+      type: object
+      description: Aircall Number object as delivered on webhook events.
+      properties:
+        id:
+          type: integer
+        direct_link:
+          type: string
+          format: uri
+        name:
+          type: string
+        digits:
+          type: string
+          description: E.164 formatted phone number.
+        country:
+          type: string
+        time_zone:
+          type: string
+        open:
+          type: boolean
+        availability_status:
+          type: string
+        is_ivr:
+          type: boolean
+        live_recording_activated:
+          type: boolean
+        priority:
+          type: integer
+        created_at:
+          type: string
+        messages:
+          type: object
+          description: |-
+            Map of audio prompt URLs configured on the number (welcome,
+            waiting, ivr, voicemail, unanswered_call, after_hours, etc.).
+          additionalProperties: true
+
+    User:
+      type: object
+      description: |-
+        Aircall User object (V1) as delivered on webhook events. Includes
+        the `numbers` array that the V2 variant omits.
+      properties:
+        id:
+          type: integer
+        direct_link:
+          type: string
+          format: uri
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        available:
+          type: boolean
+        availability_status:
+          type: string
+          enum: [available, custom, unavailable]
+        substatus:
+          type: string
+        time_zone:
+          type: string
+        language:
+          type: string
+        wrap_up_time:
+          type: integer
+          description: Wrap-up time in seconds.
+        extension:
+          type: string
+        created_at:
+          type: string
+        numbers:
+          type: array
+          description: Numbers assigned to the user. Present on V1 payloads only.
+          items:
+            $ref: '#/components/schemas/Number'
+
+    UserV2:
+      type: object
+      description: |-
+        Aircall User object (V2) as delivered on `.v2` webhook events.
+        Compared to V1, the `numbers` array is omitted. The `last_call_id`
+        field is surfaced on wrap-up time events when available.
+      properties:
+        id:
+          type: integer
+        direct_link:
+          type: string
+          format: uri
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        available:
+          type: boolean
+        availability_status:
+          type: string
+          enum: [available, custom, unavailable]
+        substatus:
+          type: string
+        time_zone:
+          type: string
+        language:
+          type: string
+        wrap_up_time:
+          type: integer
+        extension:
+          type: string
+        created_at:
+          type: string
+        last_call_id:
+          type: integer
+          description: |-
+            Identifier of the call that triggered the wrap-up window.
+            Only present on `user.wut_start.v2` / `user.wut_end.v2` when
+            an originating call is known.
+
+    Team:
+      type: object
+      description: Aircall Team object.
+      properties:
+        id:
+          type: integer
+        direct_link:
+          type: string
+          format: uri
+        name:
+          type: string
+        created_at:
+          type: string
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+
+    Tag:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        color:
+          type: string
+        description:
+          type: string
+
+    Comment:
+      type: object
+      properties:
+        id:
+          type: integer
+        content:
+          type: string
+        posted_at:
+          type: integer
+          format: int64
+        posted_by:
+          $ref: '#/components/schemas/User'
+
+    Message:
+      type: object
+      description: |-
+        Aircall Message object for SMS, MMS, WhatsApp and group messages.
+        Carried on `message.*` and `group_message.*` events.
+      properties:
+        id:
+          type: integer
+        direct_link:
+          type: string
+          format: uri
+        direction:
+          type: string
+          enum: [inbound, outbound]
+        channel:
+          type: string
+          description: Underlying messaging channel (sms, mms, whatsapp).
+          enum: [sms, mms, whatsapp]
+        status:
+          type: string
+          description: Delivery status, refreshed on `*.status_updated` events.
+        content:
+          type: string
+        media_urls:
+          type: array
+          items:
+            type: string
+            format: uri
+        from:
+          type: string
+        to:
+          type: array
+          items:
+            type: string
+        number:
+          $ref: '#/components/schemas/Number'
+        user:
+          $ref: '#/components/schemas/User'
+        contact:
+          $ref: '#/components/schemas/Contact'
+        created_at:
+          type: string
+        sent_at:
+          type: string
+        received_at:
+          type: string
+
+    Integration:
+      type: object
+      description: Third-party integration record carried on `integration.deleted`.
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        company_id:
+          type: integer
+        deleted_at:
+          type: string
+
+    ConversationIntelligenceResult:
+      type: object
+      description: |-
+        Generic payload wrapper for Conversation Intelligence webhook
+        events (transcription, summary, sentiment, topics, action items,
+        playbook results, real-time utterances, custom summary results,
+        call evaluations). The exact shape depends on the event class; the
+        common fields below are surfaced consistently. Additional fields
+        such as `transcription`, `summary`, `sentiment_score`, `topics`,
+        `action_items`, `playbook_result`, `utterances` and `evaluation`
+        are populated according to the event class.
+      properties:
+        call_id:
+          type: integer
+        call_uuid:
+          type: string
+        language:
+          type: string
+        created_at:
+          type: string
+      additionalProperties: true
+
+    AiVoiceAgentResult:
+      type: object
+      description: |-
+        Payload carried on `ai_voice_agent.*` events. Includes references
+        to the underlying call and the AI Voice Agent configuration that
+        handled it.
+      properties:
+        call_id:
+          type: integer
+        call_uuid:
+          type: string
+        agent_id:
+          type: string
+        agent_name:
+          type: string
+        started_at:
+          type: string
+        ended_at:
+          type: string
+        escalated_to:
+          $ref: '#/components/schemas/User'
+        summary:
+          type: string
+        intake_answers:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+      additionalProperties: true
+
+    AnalyticsReport:
+      type: object
+      description: Payload carried on `analytics.report_created` and `analytics.report_failed`.
+      properties:
+        report_id:
+          type: string
+        status:
+          type: string
+          enum: [created, failed]
+        download_url:
+          type: string
+          format: uri
+        error:
+          type: string
+        created_at:
+          type: string
+      additionalProperties: true

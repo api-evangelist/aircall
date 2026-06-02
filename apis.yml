@@ -12,7 +12,7 @@ tags:
   - CRM
   - Sales
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - name: Aircall Calls API
@@ -63,6 +63,8 @@ apis:
     properties:
     - type: Documentation
       url: https://developer.aircall.io/api-references/
+    - type: AsyncAPI
+      url: asyncapi/aircall-webhooks-asyncapi.yml
   - name: Aircall Messaging API
     description: Send and receive SMS/MMS and group messages.
     humanURL: https://developer.aircall.io/api-references/

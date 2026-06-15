@@ -1,0 +1,620 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Aircall Public API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/users"
+          },
+          "docs": "List users"
+        },
+        {
+          "info": {
+            "name": "Create user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/users"
+          },
+          "docs": "Create user"
+        },
+        {
+          "info": {
+            "name": "Retrieve user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve user"
+        },
+        {
+          "info": {
+            "name": "Update user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.aircall.io/v1/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update user"
+        },
+        {
+          "info": {
+            "name": "Delete user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.aircall.io/v1/users/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Teams",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/teams"
+          },
+          "docs": "List teams"
+        },
+        {
+          "info": {
+            "name": "Create team",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/teams"
+          },
+          "docs": "Create team"
+        },
+        {
+          "info": {
+            "name": "Retrieve team",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve team"
+        },
+        {
+          "info": {
+            "name": "Delete team",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.aircall.io/v1/teams/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete team"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Calls",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List calls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/calls"
+          },
+          "docs": "List calls"
+        },
+        {
+          "info": {
+            "name": "Search calls",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/calls/search"
+          },
+          "docs": "Search calls"
+        },
+        {
+          "info": {
+            "name": "Retrieve call",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/calls/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve call"
+        },
+        {
+          "info": {
+            "name": "Transfer a call",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/calls/:id/transfer",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Transfer a call"
+        },
+        {
+          "info": {
+            "name": "Add comment to a call",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/calls/:id/comments",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Add comment to a call"
+        },
+        {
+          "info": {
+            "name": "Tag a call",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/calls/:id/tags",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Tag a call"
+        },
+        {
+          "info": {
+            "name": "Archive a call",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.aircall.io/v1/calls/:id/archive",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Archive a call"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Numbers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/numbers"
+          },
+          "docs": "List numbers"
+        },
+        {
+          "info": {
+            "name": "Retrieve number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/numbers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve number"
+        },
+        {
+          "info": {
+            "name": "Update number",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.aircall.io/v1/numbers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update number"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/contacts"
+          },
+          "docs": "List contacts"
+        },
+        {
+          "info": {
+            "name": "Create contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/contacts"
+          },
+          "docs": "Create contact"
+        },
+        {
+          "info": {
+            "name": "Retrieve contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/contacts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve contact"
+        },
+        {
+          "info": {
+            "name": "Update contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.aircall.io/v1/contacts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update contact"
+        },
+        {
+          "info": {
+            "name": "Delete contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.aircall.io/v1/contacts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete contact"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/tags"
+          },
+          "docs": "List tags"
+        },
+        {
+          "info": {
+            "name": "Create tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/tags"
+          },
+          "docs": "Create tag"
+        },
+        {
+          "info": {
+            "name": "Retrieve tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/tags/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve tag"
+        },
+        {
+          "info": {
+            "name": "Update tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.aircall.io/v1/tags/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update tag"
+        },
+        {
+          "info": {
+            "name": "Delete tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.aircall.io/v1/tags/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete tag"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/webhooks"
+          },
+          "docs": "List webhooks"
+        },
+        {
+          "info": {
+            "name": "Create webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.aircall.io/v1/webhooks"
+          },
+          "docs": "Create webhook"
+        },
+        {
+          "info": {
+            "name": "Retrieve webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/webhooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve webhook"
+        },
+        {
+          "info": {
+            "name": "Delete webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.aircall.io/v1/webhooks/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete webhook"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Conversation Intelligence",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve call transcription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/calls/:id/transcription",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve call transcription"
+        },
+        {
+          "info": {
+            "name": "Retrieve call summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/calls/:id/summary",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve call summary"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

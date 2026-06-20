@@ -4,7 +4,7 @@ name: Aircall
 kind: company
 description: Aircall is a cloud-based phone system for sales and support teams with deep CRM integrations. APIs for users,
   calls, numbers, contacts, tags, webhooks, and Aircall AI.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Communications
   - Voice

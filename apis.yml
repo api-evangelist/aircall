@@ -109,7 +109,7 @@ common:
     url: rate-limits/aircall-rate-limits.yml
   - type: FinOps
     url: finops/aircall-finops.yml
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.aircall.io/llms.txt
 maintainers:
   - FN: Kin Lane

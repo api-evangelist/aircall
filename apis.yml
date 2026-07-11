@@ -97,6 +97,8 @@ apis:
     - type: Documentation
       url: https://developer.aircall.io/api-references/
 common:
+  - type: OAuthScopes
+    url: scopes/aircall-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/aircall
   - type: LinkedIn

@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/aircall-openapi.yml
+schemes:
+- name: OAuth2
+  source: openapi/aircall-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.aircall.io/oauth/authorize
+    tokenUrl: https://auth.aircall.io/oauth/token
+  description: OAuth 2.0 authorization code flow for Aircall Marketplace technology partners.
+scopes:
+- scope: public_api
+  description: Access to the Aircall Public API
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/aircall-openapi.yml

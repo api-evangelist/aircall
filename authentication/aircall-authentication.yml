@@ -1,0 +1,27 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/aircall-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: BasicAuth
+  type: http
+  scheme: basic
+  description: Aircall customer authentication using api_id (username) and api_token (password)
+    sent as HTTP Basic auth.
+  sources:
+  - openapi/aircall-openapi.yml
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.aircall.io/oauth/authorize
+    tokenUrl: https://auth.aircall.io/oauth/token
+    scopes: 1
+  description: OAuth 2.0 authorization code flow for Aircall Marketplace technology partners.
+  sources:
+  - openapi/aircall-openapi.yml

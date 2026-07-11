@@ -97,6 +97,12 @@ apis:
     - type: Documentation
       url: https://developer.aircall.io/api-references/
 common:
+  - type: TrustCenter
+    url: security/aircall-trust-center.yml
+  - type: DomainSecurity
+    url: security/aircall-domain-security.yml
+  - type: Authentication
+    url: authentication/aircall-authentication.yml
   - type: OAuthScopes
     url: scopes/aircall-scopes.yml
   - type: GitHubOrganization

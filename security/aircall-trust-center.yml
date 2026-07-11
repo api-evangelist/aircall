@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://aircall.io/security/
+url: https://aircall.io/security/
+certifications:
+- SOC 2
+- ISO 27001
+- PCI DSS
+- FedRAMP
+- GDPR
+evidence:
+- source: https://aircall.io/security/
+  keywords:
+  - soc2
+  - iso 27001
+  - pci dss
+  - fedramp
+  - gdpr

@@ -97,6 +97,8 @@ apis:
     - type: Documentation
       url: https://developer.aircall.io/api-references/
 common:
+  - type: AgenticAccess
+    url: agentic-access/aircall-agentic-access.yml
   - type: TrustCenter
     url: security/aircall-trust-center.yml
   - type: DomainSecurity

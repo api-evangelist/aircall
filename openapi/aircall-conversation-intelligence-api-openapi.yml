@@ -1,0 +1,77 @@
+openapi: 3.1.0
+info:
+  title: Aircall Public Calls Conversation Intelligence API
+  version: v1
+  description: 'Best-effort OpenAPI 3.1 representation of the Aircall Public API derived from
+
+    https://developer.aircall.io/api-references/. Aircall is a cloud phone
+
+    system. Resources include users, teams, calls, numbers, contacts, tags,
+
+    messages, webhooks, dialer campaigns, conversation intelligence, and the
+
+    AI voice agent. Authentication supports OAuth 2.0 (for technology partners)
+
+    or HTTP Basic auth using api_id / api_token (for customers). Rate limit:
+
+    120 requests per minute per API key.
+
+    '
+  contact:
+    name: Aircall Developer
+    url: https://developer.aircall.io/api-references/
+servers:
+- url: https://api.aircall.io/v1
+  description: Aircall production API
+security:
+- BasicAuth: []
+- OAuth2:
+  - public_api
+tags:
+- name: Conversation Intelligence
+paths:
+  /calls/{id}/transcription:
+    get:
+      tags:
+      - Conversation Intelligence
+      summary: Retrieve call transcription
+      operationId: getTranscription
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+  /calls/{id}/summary:
+    get:
+      tags:
+      - Conversation Intelligence
+      summary: Retrieve call summary
+      operationId: getSummary
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Aircall customer authentication using api_id (username) and api_token (password) sent as HTTP Basic auth.
+    OAuth2:
+      type: oauth2
+      description: OAuth 2.0 authorization code flow for Aircall Marketplace technology partners.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.aircall.io/oauth/authorize
+          tokenUrl: https://auth.aircall.io/oauth/token
+          scopes:
+            public_api: Access to the Aircall Public API

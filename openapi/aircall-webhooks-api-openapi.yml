@@ -1,0 +1,93 @@
+openapi: 3.1.0
+info:
+  title: Aircall Public Calls Webhooks API
+  version: v1
+  description: 'Best-effort OpenAPI 3.1 representation of the Aircall Public API derived from
+
+    https://developer.aircall.io/api-references/. Aircall is a cloud phone
+
+    system. Resources include users, teams, calls, numbers, contacts, tags,
+
+    messages, webhooks, dialer campaigns, conversation intelligence, and the
+
+    AI voice agent. Authentication supports OAuth 2.0 (for technology partners)
+
+    or HTTP Basic auth using api_id / api_token (for customers). Rate limit:
+
+    120 requests per minute per API key.
+
+    '
+  contact:
+    name: Aircall Developer
+    url: https://developer.aircall.io/api-references/
+servers:
+- url: https://api.aircall.io/v1
+  description: Aircall production API
+security:
+- BasicAuth: []
+- OAuth2:
+  - public_api
+tags:
+- name: Webhooks
+paths:
+  /webhooks:
+    get:
+      tags:
+      - Webhooks
+      summary: List webhooks
+      operationId: listWebhooks
+      responses:
+        '200':
+          description: OK
+    post:
+      tags:
+      - Webhooks
+      summary: Create webhook
+      operationId: createWebhook
+      responses:
+        '201':
+          description: Created
+  /webhooks/{id}:
+    get:
+      tags:
+      - Webhooks
+      summary: Retrieve webhook
+      operationId: getWebhook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Webhooks
+      summary: Delete webhook
+      operationId: deleteWebhook
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Deleted
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+      description: Aircall customer authentication using api_id (username) and api_token (password) sent as HTTP Basic auth.
+    OAuth2:
+      type: oauth2
+      description: OAuth 2.0 authorization code flow for Aircall Marketplace technology partners.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.aircall.io/oauth/authorize
+          tokenUrl: https://auth.aircall.io/oauth/token
+          scopes:
+            public_api: Access to the Aircall Public API

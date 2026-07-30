@@ -4,7 +4,20 @@ name: Aircall
 kind: company
 description: Aircall is a cloud-based phone system for sales and support teams with deep CRM integrations. APIs for users,
   calls, numbers, contacts, tags, webhooks, and Aircall AI.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/aircall.png
 tags:
   - Communications
   - Voice
@@ -15,87 +28,168 @@ created: '2026-05-08'
 modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
-  - name: Aircall Calls API
-    description: List, transfer, comment, tag and archive calls.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - Calls
-    - Voice
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-  - name: Aircall Users & Teams API
-    description: Create, retrieve, update and delete users and organize them into teams.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - Users
-    - Teams
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-  - name: Aircall Numbers API
-    description: Configure phone numbers and SMS settings.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - Numbers
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-  - name: Aircall Contacts API
-    description: Manage customer contacts shared across the workspace.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - Contacts
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-  - name: Aircall Webhooks API
-    description: Register, list and manage event subscriptions.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - Webhooks
-    - Events
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-    - type: AsyncAPI
-      url: asyncapi/aircall-webhooks-asyncapi.yml
-  - name: Aircall Messaging API
-    description: Send and receive SMS/MMS and group messages.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - SMS
-    - Messaging
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-  - name: Aircall Conversation Intelligence API
-    description: Access transcriptions, sentiment analysis, summaries and action items.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - AI
-    - Transcription
-    - Conversation Intelligence
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
-  - name: Aircall Dialer Campaign API
-    description: Create and manage outbound dialer campaigns.
-    humanURL: https://developer.aircall.io/api-references/
-    baseURL: https://api.aircall.io/v1
-    tags:
-    - Dialer
-    - Outbound
-    properties:
-    - type: Documentation
-      url: https://developer.aircall.io/api-references/
+- name: Aircall Calls API
+  description: List, transfer, comment, tag and archive calls.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Calls
+  - Voice
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- name: Aircall Users & Teams API
+  description: Create, retrieve, update and delete users and organize them into teams.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Users
+  - Teams
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- name: Aircall Numbers API
+  description: Configure phone numbers and SMS settings.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Numbers
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- name: Aircall Contacts API
+  description: Manage customer contacts shared across the workspace.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Contacts
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- name: Aircall Webhooks API
+  description: Register, list and manage event subscriptions.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Webhooks
+  - Events
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+  - type: AsyncAPI
+    url: asyncapi/aircall-webhooks-asyncapi.yml
+- name: Aircall Messaging API
+  description: Send and receive SMS/MMS and group messages.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - SMS
+  - Messaging
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- name: Aircall Conversation Intelligence API
+  description: Access transcriptions, sentiment analysis, summaries and action items.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - AI
+  - Transcription
+  - Conversation Intelligence
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- name: Aircall Dialer Campaign API
+  description: Create and manage outbound dialer campaigns.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Dialer
+  - Outbound
+  properties:
+  - type: Documentation
+    url: https://developer.aircall.io/api-references/
+- aid: aircall:aircall-calls-api
+  name: Aircall Calls API
+  description: The Calls API from Aircall — 7 operation(s) for calls.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Calls
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-calls-api-openapi.yml
+- aid: aircall:aircall-contacts-api
+  name: Aircall Contacts API
+  description: The Contacts API from Aircall — 2 operation(s) for contacts.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-contacts-api-openapi.yml
+- aid: aircall:aircall-conversation-intelligence-api
+  name: Aircall Conversation Intelligence API
+  description: >-
+    The Conversation Intelligence API from Aircall — 2 operation(s) for conversation intelligence.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Conversation Intelligence
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-conversation-intelligence-api-openapi.yml
+- aid: aircall:aircall-numbers-api
+  name: Aircall Numbers API
+  description: The Numbers API from Aircall — 2 operation(s) for numbers.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Numbers
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-numbers-api-openapi.yml
+- aid: aircall:aircall-tags-api
+  name: Aircall Tags API
+  description: The Tags API from Aircall — 2 operation(s) for tags.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-tags-api-openapi.yml
+- aid: aircall:aircall-teams-api
+  name: Aircall Teams API
+  description: The Teams API from Aircall — 2 operation(s) for teams.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Teams
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-teams-api-openapi.yml
+- aid: aircall:aircall-users-api
+  name: Aircall Users API
+  description: The Users API from Aircall — 2 operation(s) for users.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-users-api-openapi.yml
+- aid: aircall:aircall-webhooks-api
+  name: Aircall Webhooks API
+  description: The Webhooks API from Aircall — 2 operation(s) for webhooks.
+  humanURL: https://developer.aircall.io/api-references/
+  baseURL: https://api.aircall.io/v1
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/aircall-webhooks-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/aircall-agentic-access.yml

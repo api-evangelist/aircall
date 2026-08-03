@@ -1,0 +1,28 @@
+{
+  "provider": "aircall",
+  "sources": [
+    "aircall-calls-api-openapi.yml",
+    "aircall-contacts-api-openapi.yml",
+    "aircall-conversation-intelligence-api-openapi.yml",
+    "aircall-numbers-api-openapi.yml",
+    "aircall-tags-api-openapi.yml",
+    "aircall-teams-api-openapi.yml",
+    "aircall-users-api-openapi.yml",
+    "aircall-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "aircall-calls-api-openapi.yml",
+    "aircall-contacts-api-openapi.yml",
+    "aircall-conversation-intelligence-api-openapi.yml",
+    "aircall-numbers-api-openapi.yml",
+    "aircall-tags-api-openapi.yml",
+    "aircall-teams-api-openapi.yml",
+    "aircall-users-api-openapi.yml",
+    "aircall-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

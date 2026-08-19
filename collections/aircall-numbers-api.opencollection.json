@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Aircall Public Calls Numbers API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Numbers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List numbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/numbers"
+          },
+          "docs": "List numbers"
+        },
+        {
+          "info": {
+            "name": "Retrieve number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.aircall.io/v1/numbers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve number"
+        },
+        {
+          "info": {
+            "name": "Update number",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.aircall.io/v1/numbers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update number"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

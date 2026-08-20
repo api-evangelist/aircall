@@ -43,6 +43,9 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - User
+  - Team
+  tags_raw:
   - Users
   - Teams
   properties:
@@ -71,6 +74,9 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - Webhook
+  - Event
+  tags_raw:
   - Webhooks
   - Events
   properties:
@@ -93,6 +99,10 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - Artificial Intelligence
+  - Transcription
+  - Conversation Intelligence
+  tags_raw:
   - AI
   - Transcription
   - Conversation Intelligence
@@ -166,6 +176,8 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - Team
+  tags_raw:
   - Teams
   properties:
   - type: OpenAPI
@@ -176,6 +188,8 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -186,6 +200,8 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI

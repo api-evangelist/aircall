@@ -1,14 +1,7 @@
 {
   "provider": "aircall",
   "sources": [
-    "aircall-calls-api-openapi.yml",
-    "aircall-contacts-api-openapi.yml",
-    "aircall-conversation-intelligence-api-openapi.yml",
-    "aircall-numbers-api-openapi.yml",
-    "aircall-tags-api-openapi.yml",
-    "aircall-teams-api-openapi.yml",
-    "aircall-users-api-openapi.yml",
-    "aircall-webhooks-api-openapi.yml"
+    "_original/aircall-openapi.yml"
   ],
   "outputs": [
     "aircall-calls-api-openapi.yml",
@@ -23,6 +16,19 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "aircall-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "aircall-calls-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-conversation-intelligence-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-numbers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-teams-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "aircall-webhooks-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

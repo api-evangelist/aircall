@@ -1,0 +1,666 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/aircall/integrations
+- https://composio.dev/toolkits/aircall
+checked:
+- https://composio.dev/toolkits/aircall
+- https://monid.ai/tools/aircall
+- https://n8n.io/integrations/aircall/
+- https://zapier.com/apps/aircall/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: aircall
+  url: https://zapier.com/apps/aircall/integrations
+  external_url: https://aircall.io/
+  partner_tier: SILVER
+  triggers:
+  - key: action_item_created
+    label: Call Action Item Created
+  - key: ai_insights_created
+    label: AI Insights Created
+  - key: ai_voice_agent_ended
+    label: AI Voice Agent Ended
+  - key: ai_voice_agent_escalated
+    label: AI Voice Agent Escalated
+  - key: ai_voice_agent_started
+    label: AI Voice Agent Started
+  - key: ai_voice_agent_summary
+    label: AI Voice Agent Summary
+  - key: call_agent_declined
+    label: 'Call Declined by Agent '
+  - key: call_answered
+    label: Call Answered
+  - key: call_commented
+    label: Call Commented
+  - key: call_comm_assets_generated
+    label: Call Assets Generated
+  - key: call_created
+    label: Call Created
+  - key: call_ended
+    label: Call Ended
+  - key: call_evaluation_created
+    label: Call Evaluation Created
+  - key: call_evaluation_updated
+    label: Call Evaluation Updated
+  - key: call_external_transferred
+    label: Call Transferred Externally
+  - key: call_hold
+    label: Call on Hold
+  - key: call_ivr_option_selected
+    label: Call IVR Option Selected
+  - key: call_ringing_on_agent
+    label: Call Ringing on Agent
+  - key: call_sentiment_created
+    label: Call Sentiment Created
+  - key: call_tagged
+    label: Call Tagged
+  - key: call_transferred
+    label: Call Transferred Internally
+  - key: call_unhold
+    label: Call Unhold
+  - key: call_voicemail_left
+    label: Call Voicemail Left
+  - key: contact_created
+    label: Contact Created
+  - key: contact_deleted
+    label: Contact Deleted
+  - key: contact_updated
+    label: Contact Updated
+  - key: custom_summary_result_created
+    label: Custom Summary Result Created
+  - key: custom_summary_result_updated
+    label: Custom Summary Result Updated
+  - key: message_received
+    label: Message Received
+  - key: message_sent
+    label: Message Sent
+  - key: message_status_updated
+    label: Message Status Updated
+  - key: number_created
+    label: Number Created
+  - key: number_deleted
+    label: Number Deleted
+  - key: playbook_result_generated
+    label: Playbook Result Generated
+  - key: playbook_result_updated
+    label: Playbook Result Updated
+  - key: realtime_transcription_utterances_received
+    label: Realtime Transcription Utterances Received
+  - key: transcription_created
+    label: Call Transcription Created
+  - key: user_closed
+    label: User Closed
+  - key: user_closed_v2
+    label: User Closed V2
+  - key: user_connected
+    label: User Connected
+  - key: user_connected_v2
+    label: User Connected V2
+  - key: user_created
+    label: User Created
+  - key: user_created_v2
+    label: User Created V2
+  - key: user_deleted
+    label: User Deleted
+  - key: user_deleted_v2
+    label: User Deleted V2
+  - key: user_disconnected
+    label: User Disconnected
+  - key: user_disconnected_v2
+    label: User Disconnected V2
+  - key: user_opened
+    label: User Opened
+  - key: user_opened_v2
+    label: User Opened V2
+  - key: user_wut_end
+    label: User Wrap Up Time Ended
+  - key: user_wut_start
+    label: User Wrap Up Time Started
+  actions:
+  - key: add_comment_to_call
+    label: Add Comment to Call
+  - key: add_tags_to_call
+    label: Add Tags to Call
+  - key: add_user_to_team
+    label: Add User to a Team
+  - key: archive_call
+    label: Archive Call
+  - key: click_to_dial
+    label: Click to Dial
+  - key: create_contact
+    label: Create Contact
+  - key: create_team
+    label: Create Team
+  - key: create_user
+    label: Create User
+  - key: delete_call_recording
+    label: Delete Call Recording
+  - key: delete_call_voicemail
+    label: Delete Call Voicemail
+  - key: delete_contact
+    label: Delete Contact
+  - key: delete_team
+    label: Delete Team
+  - key: delete_user
+    label: Delete User
+  - key: fetch_call_evaluation
+    label: Fetch a Call Evaluation by Call Id
+  - key: get_call_action_items
+    label: Get a Call Action Items
+  - key: get_call_sentiment
+    label: Get a Call Sentiment
+  - key: get_call_summary
+    label: 'Get a Call Summary '
+  - key: get_call_topics
+    label: Get a Call Topics
+  - key: get_call_transcription
+    label: Get a Call Transcription
+  - key: get_custom_call_summary
+    label: Get Custom Call Summary
+  - key: get_playbook_results
+    label: Get Playbook Results
+  - key: get_realtime_call_summary
+    label: 'Get a Realtime Call Summary '
+  - key: pause_call_recording
+    label: Pause Call Recording
+  - key: remove_user_from_team
+    label: Remove User From a Team
+  - key: resume_call_recording
+    label: Resume Call Recording
+  - key: send_group_message_in_agent_conversation
+    label: Send Group Message in Agent Conversation
+  - key: send_group_message_skipping_aircall_inbox
+    label: Send Group Message Skipping Aircall Inbox
+  - key: send_message_in_conversation
+    label: Send Message in Conversation
+  - key: send_message_skipping_aircall_inbox
+    label: Send Message Skipping Aircall Inbox
+  - key: send_whatsapp_message_in_agent_conversation
+    label: Send WhatsApp Message in Agent Conversation
+  - key: send_whatsapp_message_skipping_aircall_inbox
+    label: Send WhatsApp Message Skipping Aircall Inbox
+  - key: show_insights_card
+    label: Show Insights Card
+  - key: start_outbound_call
+    label: Start Outbound Call
+  - key: transfer_call
+    label: Transfer Call
+  - key: unarchive_call
+    label: Unarchive Call
+  - key: update_contact
+    label: Update Contact
+  - key: update_number
+    label: Update Number
+  - key: update_user
+    label: Update User
+  searches:
+  - key: fetch_all_teams
+    label: Fetch All Teams
+  - key: fetch_team_by_id
+    label: Fetch a Team by Id
+  - key: get_contact_details
+    label: Get Contact Details
+  - key: get_numbers
+    label: Get Numbers
+  - key: get_user_availability
+    label: Get User Availability
+  - key: get_user_details
+    label: Get User Details
+  - key: list_user_number
+    label: List All User Number
+  - key: retrieve_call_details
+    label: Retrieve Call Details
+  - key: search_call
+    label: Search Call
+  - key: user_availabilities
+    label: User Availabilities
+- marketplace: composio
+  channel: agent-gateway
+  app: aircall
+  url: https://composio.dev/toolkits/aircall
+  identity: action-prefix
+  actions:
+  - key: AIRCALL_ADD_CONTACT_METHOD
+  - key: AIRCALL_ADD_USER_TO_TEAM
+  - key: AIRCALL_COMMENT_CALL
+  - key: AIRCALL_CREATE_CONTACT
+  - key: AIRCALL_CREATE_TAG
+  - key: AIRCALL_CREATE_TEAM
+  - key: AIRCALL_CREATE_USER
+  - key: AIRCALL_CREATE_WEBHOOK
+  - key: AIRCALL_DELETE_CALL_MEDIA
+  - key: AIRCALL_DELETE_CONTACT
+  - key: AIRCALL_DELETE_CONTACT_METHOD
+  - key: AIRCALL_DELETE_TAG
+  - key: AIRCALL_DELETE_TEAM
+  - key: AIRCALL_DELETE_USER
+  - key: AIRCALL_DELETE_WEBHOOK
+  - key: AIRCALL_GET_CALL
+  - key: AIRCALL_GET_COMPANY
+  - key: AIRCALL_GET_CONTACT
+  - key: AIRCALL_GET_NUMBER
+  - key: AIRCALL_GET_NUMBER_REGISTRATION_STATUS
+  - key: AIRCALL_GET_TAG
+  - key: AIRCALL_GET_TEAM
+  - key: AIRCALL_GET_USER
+  - key: AIRCALL_GET_USER_AVAILABILITY
+  - key: AIRCALL_GET_WEBHOOK
+  - key: AIRCALL_LIST_CALLS
+  - key: AIRCALL_LIST_CONTACTS
+  - key: AIRCALL_LIST_NUMBERS
+  - key: AIRCALL_LIST_TAGS
+  - key: AIRCALL_LIST_TEAMS
+  - key: AIRCALL_LIST_USERS
+  - key: AIRCALL_LIST_USERS_AVAILABILITY
+  - key: AIRCALL_LIST_USER_NUMBERS
+  - key: AIRCALL_LIST_WEBHOOKS
+  - key: AIRCALL_PUBLISH_CALL_INSIGHT_CARD
+  - key: AIRCALL_REMOVE_USER_FROM_TEAM
+  - key: AIRCALL_SEARCH_CALLS
+  - key: AIRCALL_SEARCH_CONTACTS
+  - key: AIRCALL_SET_CALL_RECORDING_STATE
+  - key: AIRCALL_START_OUTBOUND_CALL
+  - key: AIRCALL_TAG_CALL
+  - key: AIRCALL_TRANSFER_CALL
+  - key: AIRCALL_UPDATE_CONTACT
+  - key: AIRCALL_UPDATE_CONTACT_METHOD
+  - key: AIRCALL_UPDATE_NUMBER
+  - key: AIRCALL_UPDATE_TAG
+  - key: AIRCALL_UPDATE_USER
+  - key: AIRCALL_UPDATE_WEBHOOK
+edges:
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Pipedrive
+  partner: pipedrive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/pipedrive
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://pipedrive.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: monday.com
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/monday
+  direction: third-party
+  category: Project Management
+  partner_url: https://monday.com/
+- partner_name: Front
+  partner: front
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/front-app
+  direction: third-party
+  category: Customer Support
+  partner_url: https://front.com/?utm_medium=referral&utm_source=partner-marketplace&utm_campaign=zapier
+- partner_name: Attio
+  partner: attio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/attio
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://attio.com/
+- partner_name: ChatGPT (OpenAI)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/chatgpt
+  direction: third-party
+  category: AI Assistants
+  partner_url: https://chat.openai.com/chat
+- partner_name: WPForms
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/wpforms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://wpforms.com/
+- partner_name: LeadConnector
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/leadconnector
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.leadconnectorhq.com/
+- partner_name: Airtable
+  partner: airtable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/airtable
+  direction: third-party
+  category: Databases
+  partner_url: https://airtable.com/
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: Close
+  partner: close
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/close
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.close.com/?utm_source=Partner&utm_medium=Integration_Listing&utm_campaign=2025_Partnerships&utm_content=Home
+- partner_name: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/facebook-lead-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.facebook.com/business/ads/lead-ads
+- partner_name: Google Calendar
+  partner: google-calendar
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/google-calendar
+  direction: third-party
+  category: Calendar
+  partner_url: https://calendar.google.com/
+- partner_name: Notion
+  partner: notion
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/notion
+  direction: third-party
+  category: Task Management
+  partner_url: https://www.notion.so/
+- partner_name: Keap
+  partner: keap
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/keap
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://keap.com/
+- partner_name: Missive
+  partner: missive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/missive
+  direction: third-party
+  category: Customer Support
+  partner_url: https://missiveapp.com/
+- partner_name: Salesforce
+  partner: salesforce
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/salesforce
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.salesforce.com/
+- partner_name: Anthropic (Claude)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/anthropic-claude
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.anthropic.com/
+- partner_name: Calendly
+  partner: calendly
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/calendly
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://calendly.com/?utm_medium=partner&utm_source=zapier&utm_campaign=main_partner_page&utm_content=main_inbound_link
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Connecteam
+  partner: connecteam
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/connecteam
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://connecteam.com/?utm_source=zapier&utm_medium=partnerships&utm_content=marketplace
+- partner_name: Zoho Desk
+  partner: zoho-desk
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/zoho-desk
+  direction: third-party
+  category: Customer Support
+  partner_url: https://go.zoho.com/lC3
+- partner_name: Autotask
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/autotask
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://www.autotask.com/
+- partner_name: Mercury Connect
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/mercury-connect
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.connective.com.au/
+- partner_name: touchSMS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/touchsms
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://platform.touchsms.com.au/
+- partner_name: Twilio
+  partner: twilio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/twilio
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.twilio.com/
+- partner_name: tl;dv
+  partner: tl-dv
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/aircall/integrations/tldv
+  direction: third-party
+  category: AI Meeting Assistants
+  partner_url: https://tldv.io/?utm_source=zapier&utm_medium=app_showcase
+templates:
+- title: Add new MailerLite group subscribers as contacts in Aircall
+  url: https://zapier.com/apps/aircall/integrations/mailerlite/255716618/add-new-mailerlite-group-subscribers-as-contacts-in-aircall
+  apps:
+  - mailerlite
+  - aircall
+- title: Create new Aircall contacts for added contacts in ActiveCampaign list
+  url: https://zapier.com/apps/activecampaign/integrations/aircall/255717324/create-new-aircall-contacts-for-added-contacts-in-activecampaign-list
+  apps:
+  - activecampaign
+  - aircall
+- title: Create notes in Pipedrive when calls end in Aircall
+  url: https://zapier.com/apps/aircall/integrations/pipedrive/255718379/create-notes-in-pipedrive-when-calls-end-in-aircall
+  apps:
+  - aircall
+  - pipedrive
+- title: '"send outbound emails with Email by Zapier when calls end in Aircall"'
+  url: https://zapier.com/apps/aircall/integrations/email/255719194/send-outbound-emails-with-email-by-zapier-when-calls-end-in-aircall
+  apps:
+  - aircall
+  - email
+- title: Update contacts in LeadConnector when calls end in Aircall
+  url: https://zapier.com/apps/aircall/integrations/leadconnector/255720348/update-contacts-in-leadconnector-when-calls-end-in-aircall
+  apps:
+  - aircall
+  - leadconnector
+- title: Create spreadsheet rows in Google Sheets for new calls created in Aircall
+  url: https://zapier.com/apps/aircall/integrations/google-sheets/255721165/create-spreadsheet-rows-in-google-sheets-for-new-calls-created-in-aircall
+  apps:
+  - aircall
+  - google-sheets
+- title: Create new JobNimbus contacts from answered Aircall calls
+  url: https://zapier.com/apps/aircall/integrations/jobnimbus/255721955/create-new-jobnimbus-contacts-from-answered-aircall-calls
+  apps:
+  - aircall
+  - jobnimbus
+- title: '"send emails in Gmail for ended calls in Aircall"'
+  url: https://zapier.com/apps/aircall/integrations/gmail/255722356/send-emails-in-gmail-for-ended-calls-in-aircall
+  apps:
+  - aircall
+  - gmail
+- title: Add users to an Aircall team every week with Schedule by Zapier
+  url: https://zapier.com/apps/aircall/integrations/schedule/255722365/add-users-to-an-aircall-team-every-week-with-schedule-by-zapier
+  apps:
+  - schedule
+  - aircall
+- title: Create new Slack channels when ai voice agents end in Aircall
+  url: https://zapier.com/apps/aircall/integrations/slack/255722975/create-new-slack-channels-when-ai-voice-agents-end-in-aircall
+  apps:
+  - aircall
+  - slack
+- title: Log ended calls in Aircall to create new rows in Google Sheets
+  url: https://zapier.com/apps/aircall/integrations/google-sheets/255723486/log-ended-calls-in-aircall-to-create-new-rows-in-google-sheets
+  apps:
+  - aircall
+  - google-sheets
+- title: Update Klaviyo profiles when calls end in Aircall
+  url: https://zapier.com/apps/aircall/integrations/klaviyo/255723884/update-klaviyo-profiles-when-calls-end-in-aircall
+  apps:
+  - aircall
+  - klaviyo
+template_total: 21

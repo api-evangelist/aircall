@@ -86,7 +86,6 @@
   arazzo: null
 - slug: aircall-monday-com
   label: monday.com
-  partner: monday-com
   partner_name: monday.com
   category: Project Management
   type: marketplace
@@ -94,7 +93,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/aircall/integrations/monday
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: aircall-front
   label: Front
@@ -377,4 +376,16 @@
   evidence: https://zapier.com/apps/aircall/integrations/tldv
   source: edge
   status: pending-generation
+  arazzo: null
+- slug: aircall-twilio-segment
+  label: Twilio Segment
+  partner: segment
+  partner_name: Twilio Segment
+  type: coverage
+  marketplace: coverage
+  channel: partner-built
+  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/aircall
+  source: edge
+  relationship: connector-coverage
+  status: not-a-workflow
   arazzo: null

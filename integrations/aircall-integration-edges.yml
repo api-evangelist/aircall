@@ -7,6 +7,7 @@ checked:
 - https://composio.dev/toolkits/aircall
 - https://monid.ai/tools/aircall
 - https://n8n.io/integrations/aircall/
+- https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/aircall
 - https://zapier.com/apps/aircall/integrations
 summary: null
 marketplace_apps:
@@ -602,6 +603,23 @@ edges:
   direction: third-party
   category: AI Meeting Assistants
   partner_url: https://tldv.io/?utm_source=zapier&utm_medium=app_showcase
+- partner_name: Twilio Segment
+  partner: segment
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/aircall
+  coverage_role:
+  - source
+  cdp_signals:
+    source:
+      catalog_entries:
+      - aircall
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 templates:
 - title: Add new MailerLite group subscribers as contacts in Aircall
   url: https://zapier.com/apps/aircall/integrations/mailerlite/255716618/add-new-mailerlite-group-subscribers-as-contacts-in-aircall

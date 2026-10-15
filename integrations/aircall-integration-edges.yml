@@ -9,6 +9,7 @@ checked:
 - https://n8n.io/integrations/aircall/
 - https://www.twilio.com/docs/segment/connections/sources/catalog/cloud-apps/aircall
 - https://zapier.com/apps/aircall/integrations
+- shopify/integrations/shopify-integration-edges.yml
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -620,6 +621,22 @@ edges:
       - aircall
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
+- partner_name: Shopify (own)
+  partner: shopify
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://apps.shopify.com/aircall
+  mirror_of: shopify/integrations/shopify-integration-edges.yml
+  apps:
+  - Aircall ‑ AI Voice & Messaging
+  listing_count: 1
+  detected: '2026-10-15'
+  detected_by: mirror-platform-listings.py
 templates:
 - title: Add new MailerLite group subscribers as contacts in Aircall
   url: https://zapier.com/apps/aircall/integrations/mailerlite/255716618/add-new-mailerlite-group-subscribers-as-contacts-in-aircall

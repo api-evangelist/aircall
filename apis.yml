@@ -126,6 +126,9 @@ apis:
   humanURL: https://developer.aircall.io/api-references/
   baseURL: https://api.aircall.io/v1
   tags:
+  - Sales Dialer
+  - Outbound
+  tags_raw:
   - Dialer
   - Outbound
   properties:

@@ -480,7 +480,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: aircall-fivetran
   label: Fivetran
@@ -506,7 +506,7 @@
     - connectors/applications/aircall
     vendor_link: https://aircall.io/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: aircall-meltano
   label: Meltano
@@ -535,7 +535,7 @@
     quality:
     - bronze
     builder: 'community (Meltano Hub variant maintainers: ticketswap)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: aircall-microsoft-teams-own
   label: Microsoft Teams (own)

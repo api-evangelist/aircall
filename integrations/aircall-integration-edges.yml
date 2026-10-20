@@ -1,4 +1,4 @@
-generated: '2026-10-12'
+generated: '2026-10-20'
 method: searched
 source:
 - https://zapier.com/apps/aircall/integrations
@@ -288,336 +288,6 @@ marketplace_apps:
   - key: AIRCALL_UPDATE_USER
   - key: AIRCALL_UPDATE_WEBHOOK
 edges:
-- partner_name: HubSpot
-  partner: hubspot
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/hubspot
-  direction: third-party
-  category: Marketing Automation
-  partner_url: http://www.hubspot.com/
-- partner_name: Pipedrive
-  partner: pipedrive
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/pipedrive
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://pipedrive.com/
-- partner_name: Google Sheets
-  partner: google-sheets
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/google-sheets
-  direction: third-party
-  category: Google
-  partner_url: http://sheets.google.com/
-- partner_name: Slack
-  partner: slack
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/slack
-  direction: third-party
-  category: Team Chat
-  partner_url: https://slack.com/
-- partner_name: monday.com
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/monday
-  direction: third-party
-  category: Project Management
-  partner_url: https://monday.com/
-- partner_name: Front
-  partner: front
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/front-app
-  direction: third-party
-  category: Customer Support
-  partner_url: https://front.com/?utm_medium=referral&utm_source=partner-marketplace&utm_campaign=zapier
-- partner_name: Attio
-  partner: attio
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/attio
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://attio.com/
-- partner_name: ChatGPT (OpenAI)
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/chatgpt
-  direction: third-party
-  category: AI Assistants
-  partner_url: https://chat.openai.com/chat
-- partner_name: WPForms
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/wpforms
-  direction: third-party
-  category: Forms & Surveys
-  partner_url: https://wpforms.com/
-- partner_name: LeadConnector
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/leadconnector
-  direction: third-party
-  category: Marketing Automation
-  partner_url: https://www.leadconnectorhq.com/
-- partner_name: Airtable
-  partner: airtable
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/airtable
-  direction: third-party
-  category: Databases
-  partner_url: https://airtable.com/
-- partner_name: Microsoft Outlook
-  partner: microsoft-outlook
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/microsoft-outlook
-  direction: third-party
-  category: Calendar
-  partner_url: https://outlook.live.com/
-- partner_name: Close
-  partner: close
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/close
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://www.close.com/?utm_source=Partner&utm_medium=Integration_Listing&utm_campaign=2025_Partnerships&utm_content=Home
-- partner_name: Facebook Lead Ads
-  partner: facebook-lead-ads
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/facebook-lead-ads
-  direction: third-party
-  category: Ads & Conversion
-  partner_url: https://www.facebook.com/business/ads/lead-ads
-- partner_name: Google Calendar
-  partner: google-calendar
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/google-calendar
-  direction: third-party
-  category: Calendar
-  partner_url: https://calendar.google.com/
-- partner_name: Notion
-  partner: notion
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/notion
-  direction: third-party
-  category: Task Management
-  partner_url: https://www.notion.so/
-- partner_name: Keap
-  partner: keap
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/keap
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://keap.com/
-- partner_name: Missive
-  partner: missive
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/missive
-  direction: third-party
-  category: Customer Support
-  partner_url: https://missiveapp.com/
-- partner_name: Salesforce
-  partner: salesforce
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/salesforce
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://www.salesforce.com/
-- partner_name: Anthropic (Claude)
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/anthropic-claude
-  direction: third-party
-  category: AI Models
-  partner_url: https://www.anthropic.com/
-- partner_name: Calendly
-  partner: calendly
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/calendly
-  direction: third-party
-  category: Scheduling & Booking
-  partner_url: https://calendly.com/?utm_medium=partner&utm_source=zapier&utm_campaign=main_partner_page&utm_content=main_inbound_link
-- partner_name: Shopify
-  partner: shopify
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/shopify
-  direction: third-party
-  category: eCommerce
-  partner_url: https://www.shopify.com/
-- partner_name: ClickUp
-  partner: clickup
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/clickup
-  direction: third-party
-  category: Project Management
-  partner_url: https://clickup.com/zapier
-- partner_name: Connecteam
-  partner: connecteam
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/connecteam
-  direction: third-party
-  category: Scheduling & Booking
-  partner_url: https://connecteam.com/?utm_source=zapier&utm_medium=partnerships&utm_content=marketplace
-- partner_name: Zoho Desk
-  partner: zoho-desk
-  partner_match: name-exact
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/zoho-desk
-  direction: third-party
-  category: Customer Support
-  partner_url: https://go.zoho.com/lC3
-- partner_name: Autotask
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/autotask
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: http://www.autotask.com/
-- partner_name: Mercury Connect
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/mercury-connect
-  direction: third-party
-  category: CRM (Customer Relationship Management)
-  partner_url: https://www.connective.com.au/
-- partner_name: touchSMS
-  partner: null
-  partner_match: null
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/touchsms
-  direction: third-party
-  category: Phone & SMS
-  partner_url: https://platform.touchsms.com.au/
-- partner_name: Twilio
-  partner: twilio
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/twilio
-  direction: third-party
-  category: Phone & SMS
-  partner_url: https://www.twilio.com/
-- partner_name: tl;dv
-  partner: tl-dv
-  partner_match: domain
-  partner_candidate: null
-  type: marketplace
-  marketplace: zapier
-  channel: ipaas-usage
-  evidence: https://zapier.com/apps/aircall/integrations/tldv
-  direction: third-party
-  category: AI Meeting Assistants
-  partner_url: https://tldv.io/?utm_source=zapier&utm_medium=app_showcase
 - partner_name: Twilio Segment
   partner: segment
   partner_match: aggregator
@@ -886,6 +556,366 @@ edges:
     detected: '2026-10-20'
   detected_by: sweep-compliance-assurance.py
   first_seen: '2026-10-20'
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Slack
+  partner: slack
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/slack
+  direction: third-party
+  category: Team Chat
+  partner_url: https://slack.com/
+- partner_name: monday.com
+  partner: monday-com
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/monday
+  direction: third-party
+  category: Project Management
+  partner_url: https://monday.com/
+- partner_name: Front
+  partner: front
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/front-app
+  direction: third-party
+  category: Customer Support
+  partner_url: https://front.com/?utm_medium=referral&utm_source=partner-marketplace&utm_campaign=zapier
+- partner_name: Attio
+  partner: attio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/attio
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://attio.com/
+- partner_name: ChatGPT (OpenAI)
+  partner: openai
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/chatgpt
+  direction: third-party
+  category: AI Assistants
+  partner_url: https://chat.openai.com/chat
+- partner_name: WPForms
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/wpforms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://wpforms.com/
+- partner_name: Pipedrive
+  partner: pipedrive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/pipedrive
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://pipedrive.com/
+- partner_name: LeadConnector
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/leadconnector
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.leadconnectorhq.com/
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: Close
+  partner: close
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/close
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.close.com/?utm_source=Partner&utm_medium=Integration_Listing&utm_campaign=2025_Partnerships&utm_content=Home
+- partner_name: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/facebook-lead-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.facebook.com/business/ads/lead-ads
+- partner_name: Airtable
+  partner: airtable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/airtable
+  direction: third-party
+  category: Databases
+  partner_url: https://airtable.com/
+- partner_name: Google Calendar
+  partner: google-calendar
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/google-calendar
+  direction: third-party
+  category: Calendar
+  partner_url: https://calendar.google.com/
+- partner_name: Notion
+  partner: notion
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/notion
+  direction: third-party
+  category: Task Management
+  partner_url: https://www.notion.so/
+- partner_name: Salesforce
+  partner: salesforce
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/salesforce
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.salesforce.com/
+- partner_name: Keap
+  partner: keap
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/keap
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://keap.com/
+- partner_name: Missive
+  partner: missive
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/missive
+  direction: third-party
+  category: Customer Support
+  partner_url: https://missiveapp.com/
+- partner_name: Anthropic (Claude)
+  partner: anthropic
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/anthropic-claude
+  direction: third-party
+  category: AI Models
+  partner_url: https://www.anthropic.com/
+- partner_name: Zoho Desk
+  partner: zoho-desk
+  partner_match: domain+name-among-holders
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/zoho-desk
+  direction: third-party
+  category: Customer Support
+  partner_url: https://go.zoho.com/lC3
+- partner_name: Calendly
+  partner: calendly
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/calendly
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://calendly.com/?utm_medium=partner&utm_source=zapier&utm_campaign=main_partner_page&utm_content=main_inbound_link
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: ClickUp
+  partner: clickup
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/clickup
+  direction: third-party
+  category: Project Management
+  partner_url: https://clickup.com/zapier
+- partner_name: Connecteam
+  partner: connecteam
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/connecteam
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://connecteam.com/?utm_source=zapier&utm_medium=partnerships&utm_content=marketplace
+- partner_name: Autotask
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/autotask
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: http://www.autotask.com/
+- partner_name: Mercury Connect
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/mercury-connect
+  direction: third-party
+  category: CRM (Customer Relationship Management)
+  partner_url: https://www.connective.com.au/
+- partner_name: touchSMS
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/touchsms
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://platform.touchsms.com.au/
+- partner_name: Twilio
+  partner: twilio
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/twilio
+  direction: third-party
+  category: Phone & SMS
+  partner_url: https://www.twilio.com/
+- partner_name: tl;dv
+  partner: tl-dv
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  relationship: ipaas-bridge
+  evidence: https://zapier.com/apps/aircall/integrations/tldv
+  direction: third-party
+  category: AI Meeting Assistants
+  partner_url: https://tldv.io/?utm_source=zapier&utm_medium=app_showcase
 templates:
 - title: Add new MailerLite group subscribers as contacts in Aircall
   url: https://zapier.com/apps/aircall/integrations/mailerlite/255716618/add-new-mailerlite-group-subscribers-as-contacts-in-aircall

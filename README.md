@@ -1,4 +1,4 @@
-# Aircall (aircall)
+# Aircall
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,178 +66,162 @@
 
 Aircall is a cloud-based phone system for sales and support teams with deep CRM integrations. APIs for users, calls, numbers, contacts, tags, webhooks, and Aircall AI.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/aircall/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/aircall/refs/heads/main/apis.yml)
+**Areas:** Communications · Voice · Cloud Phone · CRM · Sales
 
-## Tags
+## Aircall on APIs.io
 
-- Communications
-- Voice
-- Cloud Phone
-- CRM
-- Sales
+Everything profiled for Aircall is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/aircall/](https://apis.io/providers/aircall/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (16)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-30
+- [Aircall Calls API](https://apis.io/apis/aircall/aircall-calls-api/) — List, transfer, comment, tag and archive calls.
+- [Aircall Users & Teams API](https://apis.io/apis/aircall/aircall-users-teams-api/) — Create, retrieve, update and delete users and organize them into teams.
+- [Aircall Numbers API](https://apis.io/apis/aircall/aircall-numbers-api/) — Configure phone numbers and SMS settings.
+- [Aircall Contacts API](https://apis.io/apis/aircall/aircall-contacts-api/) — Manage customer contacts shared across the workspace.
+- [Aircall Webhooks API](https://apis.io/apis/aircall/aircall-webhooks-api/) — Register, list and manage event subscriptions.
+- [Aircall Messaging API](https://apis.io/apis/aircall/aircall-messaging-api/) — Send and receive SMS/MMS and group messages.
+- [Aircall Conversation Intelligence API](https://apis.io/apis/aircall/aircall-conversation-intelligence-api/) — Access transcriptions, sentiment analysis, summaries and action items.
+- [Aircall Dialer Campaign API](https://apis.io/apis/aircall/aircall-dialer-campaign-api/) — Create and manage outbound dialer campaigns.
+- [Aircall Calls API](https://apis.io/apis/aircall/aircall-calls-api/) — The Calls API from Aircall — 7 operation(s) for calls.
+- [Aircall Contacts API](https://apis.io/apis/aircall/aircall-contacts-api/) — The Contacts API from Aircall — 2 operation(s) for contacts.
+- [Aircall Conversation Intelligence API](https://apis.io/apis/aircall/aircall-conversation-intelligence-api/) — The Conversation Intelligence API from Aircall — 2 operation(s) for conversation intelligence.
+- [Aircall Numbers API](https://apis.io/apis/aircall/aircall-numbers-api/) — The Numbers API from Aircall — 2 operation(s) for numbers.
+- [Aircall Tags API](https://apis.io/apis/aircall/aircall-tags-api/) — The Tags API from Aircall — 2 operation(s) for tags.
+- [Aircall Teams API](https://apis.io/apis/aircall/aircall-teams-api/) — The Teams API from Aircall — 2 operation(s) for teams.
+- [Aircall Users API](https://apis.io/apis/aircall/aircall-users-api/) — The Users API from Aircall — 2 operation(s) for users.
+- [Aircall Webhooks API](https://apis.io/apis/aircall/aircall-webhooks-api/) — The Webhooks API from Aircall — 2 operation(s) for webhooks.
 
-## APIs
+### Published properties
 
-### Aircall Calls API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-List, transfer, comment, tag and archive calls.
+#### AsyncAPI (1)
 
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
+Event-driven and webhook contracts.
 
-#### Tags
+- [Aircall Webhooks](https://apis.io/asyncapis/aircall/aircall-webhooks-asyncapi/)
 
-- Calls
-- Voice
+#### Event channels (1)
 
-#### Properties
+Individual events and webhooks the provider emits.
 
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [/aircall/webhook](https://apis.io/channels/aircall/aircall-webhook/)
 
-### Aircall Users & Teams API
+#### Agentic access (1)
 
-Create, retrieve, update and delete users and organize them into teams.
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
+- [Aircall Agentic Access](https://apis.io/agentic-access/aircall/aircall-agentic-access/)
 
-#### Tags
+#### Collections (9)
 
-- Users
-- Teams
+Postman and Open Collection request collections.
 
-#### Properties
+- [Aircall Public API](https://apis.io/collections/aircall/open-aircall/)
+- [Aircall Public Calls API](https://apis.io/collections/aircall/open-aircall-calls-api/)
+- [Aircall Public Calls Contacts API](https://apis.io/collections/aircall/open-aircall-contacts-api/)
+- [Aircall Public Calls Conversation Intelligence API](https://apis.io/collections/aircall/open-aircall-conversation-intelligence-api/)
+- [Aircall Public Calls Numbers API](https://apis.io/collections/aircall/open-aircall-numbers-api/)
+- [Aircall Public Calls Tags API](https://apis.io/collections/aircall/open-aircall-tags-api/)
+- [Aircall Public Calls Teams API](https://apis.io/collections/aircall/open-aircall-teams-api/)
+- [Aircall Public Calls Users API](https://apis.io/collections/aircall/open-aircall-users-api/)
+- [Aircall Public Calls Webhooks API](https://apis.io/collections/aircall/open-aircall-webhooks-api/)
 
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Governance rules (1)
 
-### Aircall Numbers API
+Spectral rulesets for the provider's contracts.
 
-Configure phone numbers and SMS settings.
+- [Aircall — asyncapi rules](https://apis.io/rules/aircall/aircall-asyncapi-spectral-rules/)
 
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
+#### Security (3)
 
-#### Tags
+Authentication, trust centre, and vulnerability disclosure.
 
-- Numbers
+- [Aircall Authentication](https://apis.io/security/aircall/aircall-authentication/)
+- [Aircall Domain Security](https://apis.io/security/aircall/aircall-domain-security/)
+- [Aircall Trust Center](https://apis.io/security/aircall/aircall-trust-center/)
 
-#### Properties
+#### OAuth scopes (1)
 
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The permissions the API asks for.
 
-### Aircall Contacts API
+- [Aircall Scopes](https://apis.io/scopes/aircall/aircall-scopes/)
 
-Manage customer contacts shared across the workspace.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
+Published plans, tiers and prices.
 
-#### Tags
+- [Aircall Plans Pricing](https://apis.io/plans/aircall/aircall-plans-pricing/)
 
-- Contacts
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Aircall Rate Limits](https://apis.io/rate-limits/aircall/aircall-rate-limits/)
 
-### Aircall Webhooks API
+#### FinOps (1)
 
-Register, list and manage event subscriptions.
+What the API costs to run, by operation.
 
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
+- [Aircall Finops](https://apis.io/finops/aircall/aircall-finops/)
 
-#### Tags
+## Where to find this API
 
-- Webhooks
-- Events
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-#### Properties
-
-- [Documentation](https://developer.aircall.io/api-references/)
-- [AsyncAPI](asyncapi/aircall-webhooks-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Aircall Messaging API
-
-Send and receive SMS/MMS and group messages.
-
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
-
-#### Tags
-
-- SMS
-- Messaging
-
-#### Properties
-
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Aircall Conversation Intelligence API
-
-Access transcriptions, sentiment analysis, summaries and action items.
-
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
-
-#### Tags
-
-- AI
-- Transcription
-- Conversation Intelligence
-
-#### Properties
-
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Aircall Dialer Campaign API
-
-Create and manage outbound dialer campaigns.
-
-- **Human URL:** [https://developer.aircall.io/api-references/](https://developer.aircall.io/api-references/)
-- **Base URL:** `https://api.aircall.io/v1`
-
-#### Tags
-
-- Dialer
-- Outbound
-
-#### Properties
-
-- [Documentation](https://developer.aircall.io/api-references/)
-- [Postman Collection](collections/aircall.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/aircall.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/aircall)
-- [LinkedIn](https://www.linkedin.com/company/aircall)
 - [Website](https://aircall.io/)
-- [Plans](plans/aircall-plans-pricing.yml)
-- [Rate Limits](rate-limits/aircall-rate-limits.yml)
-- [Fin Ops](finops/aircall-finops.yml)
-- [L L Ms Txt](https://developer.aircall.io/llms.txt)
+- [Blog](https://aircall.io/blog/)
+- [GitHub](https://github.com/aircall)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 30.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 56.1 |
+| Contract governance | 11.4 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 13.2 |
+
+**Agent readiness 24.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/aircall/](https://apis.io/providers/aircall/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Aircall: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/aircall/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
